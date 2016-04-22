@@ -1,8 +1,9 @@
 var first_run = false;
-
 var vettore = [];
 var corso;
-var cont;
+var cont = 0;
+var asdsasd;
+asdsasd = 0;
 if (!localStorage['ran_before']) {
     var testo = "0";
     var testo2 = "0";
@@ -11,27 +12,9 @@ if (!localStorage['ran_before']) {
     first_run = true;
     localStorage['ran_before'] = '1';
     cont = 0;
-    alert("Unimol MENU - versione 5.0");
-    /*
-     var xhr = new XMLHttpRequest();
 
-     xhr.open("GET", "http://dipbioter.unimol.it", true);
-     xhr.onreadystatechange = function () {
+    alert("Unimol MENU - versione 5.2");
 
-     if (xhr.readyState == 4) {
-     // WARNING! Might be injecting a delicious script!
-     //document.getElementById("resp").innerHTML = xhr.responseText;
-     //console.log("ok")
-     //console.log(xhr.responseText);
-     //$("p").append("<font color='green'>"+xhr.responseText+"</font>");
-     localStorage["sito1"] = "asd";
-     localStorage["sito2"] = localStorage["sito1"];
-
-
-     }
-     };
-     xhr.send();
-     */
     startItUp();
 
     for (var i = 0; i < 18; i++) {
@@ -44,8 +27,15 @@ if (!localStorage['ran_before']) {
     }, function () {
 
     });
-}
 
+    setInterval(asd, 1000);
+    function asd() {
+        if (asdsasd == 0) {
+        }
+        chrome.browserAction.setBadgeText({text: ""});
+        asdsasd = 1;
+    }
+}
 
 function notifyMe() {
 
@@ -65,9 +55,6 @@ function notifyMe() {
 
         }
 
-        // Otherwise, we need to ask the user for permission
-        // Note, Chrome does not implement the permission static property
-        // So we have to check for NOT 'denied' instead of 'default'
         else if (Notification.permission !== 'denied') {
             Notification.requestPermission(function (permission) {
 
@@ -105,9 +92,6 @@ function notifyMeExam() {
         }
     }
 
-    // Otherwise, we need to ask the user for permission
-    // Note, Chrome does not implement the permission static property
-    // So we have to check for NOT 'denied' instead of 'default'
     else if (Notification.permission !== 'denied') {
         Notification.requestPermission(function (permission) {
 
@@ -124,18 +108,14 @@ function notifyMeExam() {
                     notification = new Notification("Sono stati pubblicati i calendari d'esame!", {icon: '/unimolbig.png'});
                 }
             }
-
-
         });
     }
 }
 
-
 function startItUp() {
     bla();
-    setInterval(bla, 4000);
+    setInterval(bla, 7200000);
 }
-
 
 chrome.storage.sync.get(null, function (val) {
     setTimeout(function () {
@@ -175,9 +155,9 @@ function bla() {
             testo = $(xhr.responseText).find(".section").text();
             if (testo.length != localStorage["sito1"].length) {
                 notifyMe();
-                if (cont != 0) {
-                    chrome.browserAction.setBadgeText({text: "A"});
-                }
+
+                chrome.browserAction.setBadgeText({text: "A"});
+
                 localStorage["sito1"] = testo;
             }
 
@@ -196,16 +176,12 @@ function bla() {
             //$("p").append("<font color='green'>"+xhr.responseText+"</font>");
             testo2 = $(xhr2.responseText).find(".section").text();
             if (testo2.length != localStorage["sito2"].length) {
-                if (cont != 0) {
-                    chrome.browserAction.setBadgeText({text: "C"});
-                }
+                chrome.browserAction.setBadgeText({text: "C"});
                 notifyMeExam();
-
                 localStorage["sito2"] = testo2;
             }
 
         }
     };
     xhr2.send();
-
 }

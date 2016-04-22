@@ -1,0 +1,28 @@
+{
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_icon": "unimolbig.png",
+    "default_popup": "popup.html"
+  },
+  "description": "Menu per accesso rapido Unimol.it",
+  "icons": {
+    "128": "unimolbig.png"
+  },
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcIKJyElGDGZdsuUAOSrxfpkhELZylefGfVvJADfd1mK6U24UBPAXj2rXoOOWdq7CQgxb+6BHOe3KNj/ZqGP7/nxpX9/ZnozI+TzoOeIVEXnO9u+iUshXxt2uNHRrFFwti1sApCoyOTlYYi6LJzXQ2Cjyjneqa5l+awpEHzocJQQIDAQAB",
+  "manifest_version": 2,
+  "name": "UNIMOL Menu",
+  "options_page": "options.html",
+  "permissions": [
+    "storage",
+    "http://dipbioter.unimol.it/",
+    "https://unimol.esse3.cineca.it/",
+    "notifications"
+  ],
+  "web_accessible_resources": [
+    "unimolbig.png"
+  ],
+  "update_url": "http://clients2.google.com/service/update2/crx",
+  "version": "4.5"
+}

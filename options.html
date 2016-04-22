@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)options.html -->
+
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+
+    <title>Unimol MENU</title>
+    <link href="chrome.css" rel="stylesheet" type="text/css">
+    <link href="pure-min.css" rel="stylesheet" type="text/css">
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="options.js" type="text/javascript"></script>
+    <script src="jstorage.js" type="text/javascript"></script>
+    <script src="prettyCheckboxes.js" type="text/javascript"></script>
+</head>
+
+<body class="frame platform-windows">
+<div class="navigation">
+    <img class="logo" src="unimolbig.png">
+
+    <h1><a href="https://chrome.google.com/webstore/detail/unimol-menu/dfacmkadlejhknecpajgikjbpkghgcnh?hl=it"
+           target="_blank">Unimol MENU</a></h1>
+
+    <ul class="menu">
+        <li class="selected" id="linkInfo">
+            <a href="#info">Info</a>
+        </li>
+
+        <li class="" id="linkModulistica">
+            <a href="#modulistica">Modulistica</a>
+        </li>
+
+        <li class="" id="linkAvvisi">
+            <a href="#avvisi">Avvisi</a>
+        </li>
+
+        <li class="" id="linkConf">
+            <a href="#configurazione">Configurazione</a>
+        </li>
+
+        <li class="" id="linkFeed">
+            <a href="#feedback">Feedback</a>
+        </li>
+
+
+        <li>
+            <div id="salva">
+                <button id="salva" class="pure-button pure-button-primary">Applica</button>
+            </div>
+        </li>
+
+    </ul>
+
+
+</div>
+
+<div class="mainview view">
+    <div class="selected" id="info" style="display: block;">
+        <header>
+            <h1>Info</h1>
+        </header>
+
+        <div class="content">
+            <h2>Contatti e info</h2>
+            <section>
+                <p>
+                    <b>UNIMOL - Dipartimento di Bioscienze e Territorio</b><br> Contrada Fonte Lappone - 86090 Pesche
+                    (IS)<br> Numero verde: 800 588 815 - Fax: +39 0874 418373<br> dipbioter.unimol.it
+                    <br> Assistenza studenti: assistenza@studenti.unimol.it<br> Segreteria studenti:
+                    segreteriastudenti@unimol.it<br> Tasse e diritto allo studio: tassestudenti@unimol.it<br>
+                    <i>I contatti sono quelli generici UNIMOL</i>
+                </p>
+            </section>
+
+            <p class="boxed info">
+                Clicka su "configurazione" nel menù laterale per impostare correttamente l'estensione a seconda delle
+                tue esigenze
+                <br> ricordati di clickare su "Applica" per salvare i cambiamenti
+            </p>
+
+            <p class="boxed info">
+                Gli orari delle lezioni sono disponibili solo relativi al corrente anno accademico,<br> quelli del
+                prossimo
+                anno accademico sono generalmente stabiliti e pubblicati <u>verso fine Settembre</u>
+            </p>
+
+            <p class="boxed warning">
+                Per gli <b>orari dei trasporti pubblici</b> consultare direttamente i siti delle compagnie <a
+                    href="http://www.trenitalia.com/trenitalia21.html">Trenitalia</a>,
+                <a href="http://www.atm-molise.it/orari/">ATM Molise</a> e
+                <a href="http://www.satiautobus.com/orari/">SATI</a>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="" id="configurazione" style="display: none;">
+        <header>
+            <h1>Configurazione</h1>
+        </header>
+
+        <div class="content">
+            <h2>Impostazioni di base</h2>
+
+            <section>
+                <div id="cambia">
+                    Corso di laurea: <select id="corsoseguito">
+                    <option value="inf">
+                        Informatica
+                    </option>
+
+                    <option value="biodiv">
+                        Scienze Biologiche - Biodiversità
+                    </option>
+
+                    <option value="biosan">
+                        Scienze Biologiche - Biosanitario
+                    </option>
+                </select><br><br> Primo anno di corso: <select id="annocorso">
+                    <option value="11">
+                        2011/12
+                    </option>
+
+                    <option value="12">
+                        2012/13
+                    </option>
+
+                    <option value="13">
+                        2013/14
+                    </option>
+
+                    <option value="14">
+                        2014/15
+                    </option>
+
+                    <option value="15">
+                        2015/16
+                    </option>
+                </select>
+
+
+                </div>
+
+
+            </section>
+
+            <!--<p class="warning">
+        <b>Scienze Biologiche</b> - Al secondo anno i due curricula (<i>biodiversità e biosanitario</i>) hanno orari differenti,<br>
+        di conseguenza temporaneamente questa estensione apre la pagina del sito piuttosto che direttamente i relativi orari in PDF.
+        </p>-->
+
+            <h2>Impostazioni link</h2>
+
+            <section>
+                <p>
+                    <button class="pure-button pure-button-primary" id="selectall">Seleziona tutto</button>
+                    <button class="pure-button pure-button-primary" id="deselectall">Deseleziona tutto</button>
+                </p>
+                <div id="colonnaSx">
+                    <div class="checkbox">
+                        <label><input id="link1" type="checkbox"> <span>Portale dello studente</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link2" type="checkbox"> <span>Guida dello studente</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link3" type="checkbox"> <span>Cerca docente</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link4" type="checkbox"> <span>Calendario esami</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link5" type="checkbox"> <span>Unimol.it</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link6" type="checkbox"> <span>Avvisi</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link7" type="checkbox"> <span>Orario lezioni</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link8" type="checkbox"> <span>Dipartimento</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link18" type="checkbox"> <span>Corsi a scelta (*)</span></label>
+                    </div>
+                </div>
+
+                <div id="colonnaDx">
+                    <div class="checkbox">
+                        <label><input id="link9" type="checkbox"> <span>Home corso</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link10" type="checkbox"> <span>Mail studenti</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link11" type="checkbox"> <span>Dreamspark Premium</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link12" type="checkbox"> <span>Servizi</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link13" type="checkbox"> <span>Biblioteca</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link14" type="checkbox"> <span>Esu Molise</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input id="link15" type="checkbox"> <span>GeQui (*)</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label style="display:none"><input id="link16" type="checkbox">
+                            <span>Orari Lez. Dipartimento</span></label>
+                        <label><input id="link17" type="checkbox"> <span>Orari Lez. Dipartimento</span></label>
+                    </div>
+                </div>
+
+            </section>
+
+            <div style="clear:both;"></div>
+            *alcuni link sono prettamente per gli studenti di un determinato corso e non sono visibili agli altri (es.
+            GeQui per Informatica)
+
+
+            <!--<section>
+                <div id="linkpers">
+                    <input id="nomelink" placeholder="Nome link" size="15" type="text"> :
+                    <input id="urllink" placeholder="URL" size="15" type="text" value="http://"><br>
+                </div>
+            </section>-->
+
+
+        </div>
+    </div>
+
+    <div class="" id="feedback" style="display: none;">
+        <header>
+            <h1>Feedback</h1>
+        </header>
+
+        <div class="content">
+
+
+            <section>
+                <p>Estensione non ufficiale realizzata per facilitare l'accesso alle pagine principali del sito web
+                    dell'
+                    <b>Università degli Studi del Molise</b>, gratuita e aggiornata</p>
+                <p>Attualmente limitata ai corsi di laurea in Informatica (L31) e in Scienze Biologiche (L13)</p>
+                <p>Vai alla pagina nel Chrome Web Store per lasciare un feedback con consigli e critiche:<br> <a
+                        href="https://chrome.google.com/webstore/detail/unimol-menu/dfacmkadlejhknecpajgikjbpkghgcnh/reviews?hl=it">Unimol
+                    MENU Chrome Web Store</a>
+                </p>
+                <p>Versione <a
+                        href="https://chrome.google.com/webstore/detail/unimol-menu/dfacmkadlejhknecpajgikjbpkghgcnh?hl=it">4.5</a>
+                    - Domenico Giustiniani</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="" id="modulistica" style="display: none;">
+        <header>
+            <h1>Modulistica</h1>
+        </header>
+
+        <div class="content">
+            <h2>Tirocinio</h2>
+            <section>
+
+                <p>
+                <h4>Modulistica necessaria per il tirocinio curriculare</h4>
+                <ol>
+                    <li>1 foto formato tessera</li>
+                    <li>1 fotocopia firmata del libretto</li>
+                    <li>2 copie del <a
+                            href="http://www.unimol.it/wp-content/uploads/2015/05/Progetto_formativo-2015.pdf">progetto
+                        formativo</a> firmate in originale [<a
+                                href="http://www.unimol.it/unimolise/allegati/51136/PF_facsimile_INF.pdf">vedi
+                            esempio</a>]</li>
+                    <li>1 <a href="http://www.unimol.it/wp-content/uploads/2015/05/Modulo-Privacy_1.pdf">autorizzazione
+                        al trattamento dei dati personali</a></li>
+                </ol>
+                Al termine del tirocinio vanno consegnati i seguenti documenti
+                <ol>
+                    <li>il <a
+                            href="http://www.unimol.it/wp-content/uploads/2015/05/Libretto_diario_tirocinante_def.pdf">libretto-diario</a>
+                        debitamente compilato e firmato
+                    </li>
+                    <li>la <a
+                            href="http://www.unimol.it/wp-content/uploads/2015/05/Relazione-finale-tirocinante_def.pdf">relazione
+                        finale</a> sullo svolgimento delle attività di tirocinio compilata dal tirocinante
+                    </li>
+                    <li>la <a href="http://www.unimol.it/wp-content/uploads/2015/05/Relazione_finale_azienda_def.pdf">relazione
+                        finale</a> sullo svolgimento delle attività di tirocinio compilata dall’azienda ospitante .
+                    </li>
+                </ol>
+                </p>
+            </section>
+            <h2>Crediti a scelta</h2>
+            <section>
+
+                <p>
+                <ol>
+                    <li><a href="http://dipbioter.unimol.it/wp-content/uploads/2016/02/Richiesta-tesi_ADE.pdf">Modulo
+                        richiesta crediti a scelta</a></li>
+                </ol>
+                </p>
+            </section>
+            <h2>Prova finale</h2>
+            <section>
+
+                <p>
+                <ol>
+                    <li><a href="http://dipbioter.unimol.it/wp-content/uploads/2016/02/Richiesta-tesi_ADE.pdf">Modulo
+                        richiesta tesi</a></li>
+                </ol>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <div class="" id="avvisi" style="display: none;">
+        <header>
+            <h1>Avvisi</h1>
+        </header>
+
+        <div class="content">
+            <section>
+                <avvisi>
+                    <p id="loading"><img src="/images/loading.gif" width="200px"></p>
+                </avvisi>
+            </section>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>

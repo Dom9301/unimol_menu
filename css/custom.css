@@ -1,0 +1,19 @@
+.panel {
+    margin-bottom: 0;
+}
+
+
+a {
+    text-decoration: none;
+    color: white
+}
+
+a:hover {
+    text-decoration: none;
+    color: white
+}
+
+.booka {
+    text-align: center;
+    padding: 3px !important;
+}

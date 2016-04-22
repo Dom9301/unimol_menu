@@ -6,7 +6,7 @@
     "default_icon": "unimolbig.png",
     "default_popup": "popup.html"
   },
-  "description": "Menu per accesso rapido Unimol.it",
+  "description": "Estensione per accesso rapido Unimol.it e notifiche di aggiornamenti",
   "icons": {
     "128": "unimolbig.png"
   },
@@ -17,12 +17,12 @@
   "permissions": [
     "storage",
     "http://dipbioter.unimol.it/",
-    "https://unimol.esse3.cineca.it/",
-    "notifications"
+    "notifications",
+    "tabs"
   ],
   "web_accessible_resources": [
     "unimolbig.png"
   ],
   "update_url": "http://clients2.google.com/service/update2/crx",
-  "version": "4.5"
+  "version": "5.0"
 }

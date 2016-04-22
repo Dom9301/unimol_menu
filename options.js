@@ -24,25 +24,32 @@ onload = function () {
                     urlfetch = "http://dipbioter.unimol.it/blog/categorie/bacheca-informatica/";
             }
 
+            if (settings.link_nuova_pagina == "1") {
+                document.getElementById("blank_link").checked = true;
+            }
+            else {
+                document.getElementById("blank_link").checked = false;
+            }
+            
 
             for (var i = 0; i < 18; i++) {
                 if (settings.vettore[i] == '1') {
                     document.getElementById(vettorelink[i]).checked = true;
                 }
             }
-/*
-            if (!settings.linkpersurl) {
-                document.getElementById("urllink").value = "HTTP://";
-            } else {
-                document.getElementById("urllink").value = settings.linkpersurl;
-            }
+            /*
+             if (!settings.linkpersurl) {
+             document.getElementById("urllink").value = "HTTP://";
+             } else {
+             document.getElementById("urllink").value = settings.linkpersurl;
+             }
 
-            if (!settings.linkpersnome) {
-                document.getElementById("nomelink").value = "";
-            } else {
-                document.getElementById("nomelink").value = settings.linkpersnome;
-            }
-*/
+             if (!settings.linkpersnome) {
+             document.getElementById("nomelink").value = "";
+             } else {
+             document.getElementById("nomelink").value = settings.linkpersnome;
+             }
+             */
 
             if (settings.anno == "11") {
                 document.getElementById("annocorso").selectedIndex = 0;
@@ -79,24 +86,19 @@ onload = function () {
     });
 
 
-
     //#######
     /*function ok(valore) {
-        console.log(valore);
-        settings = valore;
-        console.log(settings.corso);
-        return settings;
-    }*/
-
-
-
-
-
+     console.log(valore);
+     settings = valore;
+     console.log(settings.corso);
+     return settings;
+     }*/
 
 
     $("#salva").click(function () {
         var vettore = [];
         //corso
+        var link_nuova_pagina = "";
         var corso_selezionato = document.getElementById("corsoseguito");
         var corso = corso_selezionato.children[corso_selezionato.selectedIndex].value;
         //anno
@@ -114,22 +116,23 @@ onload = function () {
             }
         }
 
+        if (document.getElementById("blank_link").checked) {
+            link_nuova_pagina = "1";
+        } else {
+            link_nuova_pagina = "0";
+        }
+
+
         //IMPLEMENTAZIONE SALVATAGGIO SINCRONIZZATO DELLE IMPOSTAZIONI##########
         chrome.storage.sync.set({
             "corso": corso, "anno": anno, /*"linkpersnome": linkpersonalizzato_nome,
-            "linkpersurl": linkpersonalizzato_url,*/ "vettore": vettore
+             "linkpersurl": linkpersonalizzato_url,*/ "vettore": vettore, "link_nuova_pagina": link_nuova_pagina
         }, function () {
 
         });
         //###########
 
     });
-
-
-
-
-
-
 
 
     $('#linkConf').click(function () {
@@ -201,8 +204,6 @@ onload = function () {
         document.getElementById("linkModulistica").setAttribute("class", "");
         document.getElementById("modulistica").style.display = "none";
     });
-
-
 
 
     $('#selectall').click(function () {

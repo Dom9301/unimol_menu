@@ -2,7 +2,7 @@ var first_run = false;
 
 var vettore = [];
 var corso;
-
+var cont;
 if (!localStorage['ran_before']) {
     var testo = "0";
     var testo2 = "0";
@@ -10,7 +10,8 @@ if (!localStorage['ran_before']) {
     localStorage["sito2"] = "0";
     first_run = true;
     localStorage['ran_before'] = '1';
-    alert("Unimol MENU - versione 4.5");
+    cont = 0;
+    alert("Unimol MENU - versione 5.0");
     /*
      var xhr = new XMLHttpRequest();
 
@@ -47,41 +48,45 @@ if (!localStorage['ran_before']) {
 
 
 function notifyMe() {
-    // Let's check if the browser supports notifications
-    if (!("Notification" in window)) {
-        alert("This browser does not support desktop notification");
-    }
-    // Let's check if the user is okay to get some notification
-    else if (Notification.permission === "granted") {
-        // If it's okay let's create a notification
-        if (localStorage["sito1"] = "0") {
-            var notification = new Notification("Le notifiche degli avvisi sono attive", {icon: 'http://blyat.pro/lib/exe/fetch.php?w=200&tok=248f8a&media=unimolbig.png'});
-        } else {
-            var notification = new Notification("Ci sono avvisi da leggere!", {icon: 'http://blyat.pro/lib/exe/fetch.php?w=200&tok=248f8a&media=unimolbig.png'});
+
+    if (cont == 0) {
+        // Let's check if the browser supports notifications
+        if (!("Notification" in window)) {
+            alert("This browser does not support desktop notification");
+        }
+        // Let's check if the user is okay to get some notification
+        else if (Notification.permission === "granted") {
+            // If it's okay let's create a notification
+            if (localStorage["sito1"] = "0") {
+                var notification = new Notification("Le notifiche degli avvisi sono attive", {icon: '/unimolbig.png'});
+            } else {
+                var notification = new Notification("Ci sono avvisi da leggere!", {icon: '/unimolbig.png'});
+            }
+
         }
 
-    }
+        // Otherwise, we need to ask the user for permission
+        // Note, Chrome does not implement the permission static property
+        // So we have to check for NOT 'denied' instead of 'default'
+        else if (Notification.permission !== 'denied') {
+            Notification.requestPermission(function (permission) {
 
-    // Otherwise, we need to ask the user for permission
-    // Note, Chrome does not implement the permission static property
-    // So we have to check for NOT 'denied' instead of 'default'
-    else if (Notification.permission !== 'denied') {
-        Notification.requestPermission(function (permission) {
-
-            // Whatever the user answers, we make sure we store the information
-            if (!('permission' in Notification)) {
-                Notification.permission = permission;
-            }
-
-            // If the user is okay, let's create a notification
-            if (permission === "granted") {
-                if (localStorage["sito1"] = "0") {
-                    notification = new Notification("Le notifiche degli avvisi sono attive", {icon: 'http://blyat.pro/lib/exe/fetch.php?w=200&tok=248f8a&media=unimolbig.png'});
-                } else {
-                    notification = new Notification("Ci sono avvisi da leggere!", {icon: 'http://blyat.pro/lib/exe/fetch.php?w=200&tok=248f8a&media=unimolbig.png'});
+                // Whatever the user answers, we make sure we store the information
+                if (!('permission' in Notification)) {
+                    Notification.permission = permission;
                 }
-            }
-        });
+
+                // If the user is okay, let's create a notification
+                if (permission === "granted") {
+                    if (localStorage["sito1"] = "0") {
+                        notification = new Notification("Le notifiche degli avvisi sono attive", {icon: '/unimolbig.png'});
+                    } else {
+                        notification = new Notification("Ci sono avvisi da leggere!", {icon: '/unimolbig.png'});
+                    }
+                }
+            });
+        }
+        cont = 1;
     }
 }
 
@@ -94,9 +99,9 @@ function notifyMeExam() {
     else if (Notification.permission === "granted") {
         // If it's okay let's create a notification
         if (localStorage["sito1"] = "0") {
-            var notification = new Notification("Le notifiche dei calendari d'esame sono attive", {icon: 'http://blyat.pro/lib/exe/fetch.php?w=200&tok=248f8a&media=unimolbig.png'});
+            var notification = new Notification("Le notifiche dei calendari d'esame sono attive", {icon: '/unimolbig.png'});
         } else {
-            var notification = new Notification("Sono stati pubblicati i calendari d'esame!", {icon: 'http://blyat.pro/lib/exe/fetch.php?w=200&tok=248f8a&media=unimolbig.png'});
+            var notification = new Notification("Sono stati pubblicati i calendari d'esame!", {icon: '/unimolbig.png'});
         }
     }
 
@@ -114,9 +119,9 @@ function notifyMeExam() {
             // If the user is okay, let's create a notification
             if (permission === "granted") {
                 if (localStorage["sito2"] = "0") {
-                    notification = new Notification("Le notifiche dei calendari d'esame sono attive", {icon: 'http://blyat.pro/lib/exe/fetch.php?w=200&tok=248f8a&media=unimolbig.png'});
+                    notification = new Notification("Le notifiche dei calendari d'esame sono attive", {icon: '/unimolbig.png'});
                 } else {
-                    notification = new Notification("Sono stati pubblicati i calendari d'esame!", {icon: 'http://blyat.pro/lib/exe/fetch.php?w=200&tok=248f8a&media=unimolbig.png'});
+                    notification = new Notification("Sono stati pubblicati i calendari d'esame!", {icon: '/unimolbig.png'});
                 }
             }
 
@@ -170,7 +175,9 @@ function bla() {
             testo = $(xhr.responseText).find(".section").text();
             if (testo.length != localStorage["sito1"].length) {
                 notifyMe();
-                chrome.browserAction.setBadgeText({text: "A"});
+                if (cont != 0) {
+                    chrome.browserAction.setBadgeText({text: "A"});
+                }
                 localStorage["sito1"] = testo;
             }
 
@@ -189,8 +196,11 @@ function bla() {
             //$("p").append("<font color='green'>"+xhr.responseText+"</font>");
             testo2 = $(xhr2.responseText).find(".section").text();
             if (testo2.length != localStorage["sito2"].length) {
+                if (cont != 0) {
+                    chrome.browserAction.setBadgeText({text: "C"});
+                }
                 notifyMeExam();
-                chrome.browserAction.setBadgeText({text: "C"});
+
                 localStorage["sito2"] = testo2;
             }
 

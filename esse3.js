@@ -5,7 +5,7 @@ onload = function () {
     var nome = "", anno_accedemico = "", anno_regolamento = "", carriera = "";
     var xhr = new XMLHttpRequest();
     var i;
-    xhr.open("POST", "https://unimol.esse3.cineca.it/auth/Logon.do?username=d.giustiniani&password=UZOX7XSE", true);
+    xhr.open("POST", "https://unimol.esse3.cineca.it/auth/Logon.do?username=USERNAME&password=PASSWORD", true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             //nome_utente = $(xhr.responseText).find("#gu-header h1").html();

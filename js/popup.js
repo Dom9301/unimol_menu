@@ -73,6 +73,39 @@ onload = function () {
                 });
             }
 
+            //IMPOSTAZIONE APERTURA LINK (TARGET BLANK, per capirci)
+            if (impostazioni.link_nuova_pagina == "1") {
+                apri = 'target="_blank"';
+            } else {
+                apri = '';
+                $("a").click(function () {
+                    chrome.tabs.query({
+                            'active': true,
+                            'windowId': chrome.windows.WINDOW_ID_CURRENT
+                        },
+                        function (tabs) {
+                            chrome.tabs.update(
+                                tabs[0].id, {
+                                    'url': link
+                                });
+                            window.close();
+                        });
+                });
+                $(".info_btn").click(function () {
+                    chrome.tabs.query({
+                            'active': true,
+                            'windowId': chrome.windows.WINDOW_ID_CURRENT
+                        },
+                        function (tabs) {
+                            chrome.tabs.update(
+                                tabs[0].id, {
+                                    'url': link
+                                });
+                            window.close();
+                        }
+                    );
+                });
+            }
 
             //GUIDE STUDENTE
             if (impostazioni.vettore[1] == '1') {
@@ -302,40 +335,6 @@ onload = function () {
                  link = "http://google.it";
                  }*/
             });
-
-            //IMPOSTAZIONE APERTURA LINK (TARGET BLANK, per capirci)
-            if (impostazioni.link_nuova_pagina == "1") {
-                apri = 'target="_blank"';
-            } else {
-                apri = '';
-                $("a").click(function () {
-                    chrome.tabs.query({
-                            'active': true,
-                            'windowId': chrome.windows.WINDOW_ID_CURRENT
-                        },
-                        function (tabs) {
-                            chrome.tabs.update(
-                                tabs[0].id, {
-                                    'url': link
-                                });
-                            window.close();
-                        });
-                });
-                $(".info_btn").click(function () {
-                    chrome.tabs.query({
-                            'active': true,
-                            'windowId': chrome.windows.WINDOW_ID_CURRENT
-                        },
-                        function (tabs) {
-                            chrome.tabs.update(
-                                tabs[0].id, {
-                                    'url': link
-                                });
-                            window.close();
-                        }
-                    );
-                });
-            }
 
 
         }, 1);

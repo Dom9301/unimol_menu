@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unimol MENU Impostazioni</title>
+
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--The custom css-->
+    <link type="text/css" rel="stylesheet" href="css/custom_options.css" media="screen"/>
+</head>
+<body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/options.js"></script>
+<nav>
+    <div class="nav-wrapper teal lighten-1">
+        <a href="#" class="brand-logo right"><img alt="logo unimol menu" src="img/unimolbig.png" id="logo"
+                                                  width="50"></a>
+        <ul id="nav-mobile" class="left">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="modulistica.html">Modulistica</a></li>
+            <li><a href="avvisi.html">Avvisi</a></li>
+            <li class="active"><a href="impostazioni.html">Impostazioni</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h4></h4>
+    <form action="#" style="margin-top: 25px;">
+        <div class="row">
+            <div class="col s6">
+                <div id="corso_seguito">
+                    <select id="corsoseguito" class="browser-default">
+                        <option value="" disabled selected>Seleziona il tuo corso di laurea</option>
+                        <option value="l_informatica">L31 - Informatica</option>
+                        <option value="lm_informatica">LM66 - Sicurezza dei Sistemi Software</option>
+                        <option value="l_biosanitaria">L13 - Biologia Biosanitaria</option>
+                        <option value="l_biodiversita">L13 - Biologia Biodiversità</option>
+                        <option value="lm_biosanitaria">LM6 - Biologia Biosanitaria</option>
+                        <option value="lm_biodiversita">LM6 - Biologia Biodiversità</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col s6">
+                <div id="anno_corso">
+                    <select id="annocorso" class="browser-default">
+                        <option value="" disabled selected>Anno di iscrizione</option>
+                        <option value="11">2011 - 2012</option>
+                        <option value="12">2012 - 2013</option>
+                        <option value="13">2013 - 2014</option>
+                        <option value="14">2014 - 2015</option>
+                        <option value="15">2015 - 2016</option>
+                        <option value="16">2016 - 2017</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--<div class="divider"></div>-->
+        <h4>Link rapidi</h4>
+        <div class="row">
+            <div class="col s3">
+                <a class="waves-effect waves-light btn" id="selectall"><i class="material-icons left">label</i>Seleziona
+                    tutto</a>
+            </div>
+            <div class="col s3">
+                <a class="waves-effect waves-light btn" id="deselectall"><i
+                        class="material-icons left">label_outline</i>Deseleziona tutto</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3">
+                <p>
+                    <input type="checkbox" id="link1"/>
+                    <label for="link1">Portale dello Studente</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link2"/>
+                    <label for="link2">Guida dello studente</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link3"/>
+                    <label for="link3">Cerca docente</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link4"/>
+                    <label for="link4">Calendario esami</label>
+                </p>
+            </div>
+            <div class="col s3">
+                <p>
+                    <input type="checkbox" id="link6"/>
+                    <label for="link6">Avvisi</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link7"/>
+                    <label for="link7">Orario lezioni</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link8"/>
+                    <label for="link8">Dipartimento</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link18"/>
+                    <label for="link18">Crediti a scelta</label>
+                </p>
+            </div>
+            <div class="col s3">
+                <p>
+                    <input type="checkbox" id="link9"/>
+                    <label for="link9">Home corso</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link10"/>
+                    <label for="link10">Mail studenti</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link11"/>
+                    <label for="link11">Microsoft Image</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link12"/>
+                    <label for="link12">Servizi</label>
+                </p>
+            </div>
+            <div class="col s3">
+                <p>
+                    <input type="checkbox" id="link13"/>
+                    <label for="link13">Biblioteca</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link14"/>
+                    <label for="link14">ESU Molise</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="link17"/>
+                    <label for="link17">Orari Lez. Generali</label>
+                    <input type="checkbox" id="link16" style="display: none;"/>
+                </p>
+                <p>
+                    <input type="checkbox" id="link5"/>
+                    <label for="link5">Unimol.it</label>
+                </p>
+            </div>
+        </div>
+        <h5>Apri i link in una nuova tab</h5>
+        <div class="row">
+            <div class="col s6">
+                <div class="switch">
+                    <label>
+                        Off
+                        <input type="checkbox" id="blank_link">
+                        <span class="lever"></span>
+                        On
+                    </label>
+                </div>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action" id="salva">Applica
+            <i class="material-icons left">send</i>
+        </button>
+    </form>
+
+</div>
+
+
+</body>
+</html>

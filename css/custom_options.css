@@ -1,0 +1,41 @@
+html {
+    min-width: 980px;
+    margin: 0 auto;
+}
+
+body {
+    font-weight: 500;
+}
+
+h5 {
+    margin-bottom: 15px;
+}
+
+.chip {
+    margin-bottom: 3px;
+}
+
+.smallchip {
+    font-size: 10px;
+}
+
+.supersmallchip {
+    font-size: 9px;
+}
+
+select {
+    font-size: 14px;
+}
+
+.post_title {
+    font-weight: bold;
+    color: #ffd8a6 !important;
+}
+
+.post_title a {
+    color: #ffd8a6;
+}
+
+#logo {
+    margin-top: 7px;
+}

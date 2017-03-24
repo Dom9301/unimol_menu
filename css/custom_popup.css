@@ -1,0 +1,52 @@
+body {
+    width: 220px;
+}
+
+.panel {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.booka {
+    text-align: center;
+    padding: 3px !important;
+}
+
+.collection {
+    margin: 0;
+    border: 0;
+    font-size: 17px;
+}
+
+.collection-item {
+    background-color: #BBDEFB !important;
+    color: #FFFFFF !important;
+}
+
+.list-group-item-info {
+    background-color: #26a69a !important;
+}
+
+.list-group-item-info:hover {
+    background-color: #61a6a6 !important;
+}
+
+.list-group a{
+	text-align: center;
+	padding: 3px !important;
+}
+
+input, textarea {
+    color: #2b3e50;
+    width: 190px;
+    border: 0;
+}

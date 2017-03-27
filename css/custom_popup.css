@@ -47,6 +47,7 @@ a:hover {
 
 input, textarea {
     color: #2b3e50;
-    width: 190px;
+    /*width: 190px;*/
+    width: 100%;
     border: 0;
 }

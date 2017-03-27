@@ -5862,7 +5862,7 @@ a.list-group-item-danger.active, button.list-group-item-danger.active, a.list-gr
 }
 
 .panel-body {
-    padding: 15px
+    /*padding: 15px*/
 }
 
 .panel-heading {
@@ -5880,7 +5880,7 @@ a.list-group-item-danger.active, button.list-group-item-danger.active, a.list-gr
     margin-top: 0;
     margin-bottom: 0;
     font-size: 17px;
-    color: inherit
+    color: white;
 }
 
 .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {

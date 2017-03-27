@@ -65,13 +65,6 @@ onload = function () {
 
             $('.nome').html(nome);
 
-            //PORTALE STUDENTE
-            if (impostazioni.vettore[0] == '1') {
-                $('.link1').html('<a href="https://unimol.esse3.cineca.it/Home.do" ' + apri + '>Portale dello studente</a>');
-                $('.link1').css({
-                    "display": "block"
-                });
-            }
 
             //IMPOSTAZIONE APERTURA LINK (TARGET BLANK, per capirci)
             if (impostazioni.link_nuova_pagina == "1") {
@@ -104,6 +97,14 @@ onload = function () {
                             window.close();
                         }
                     );
+                });
+            }
+
+            //PORTALE STUDENTE
+            if (impostazioni.vettore[0] == '1') {
+                $('.link1').html('<a href="https://unimol.esse3.cineca.it/Home.do" ' + apri + '>Portale dello studente</a>');
+                $('.link1').css({
+                    "display": "block"
                 });
             }
 
